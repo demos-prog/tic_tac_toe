@@ -16,9 +16,9 @@ type Winner = {
 function App() {
   const [state, setState] = useState<string[][]>(start_field);
   const [isFirst, setIsFirst] = useState<boolean>(true);
-  const [x_counter, setX_counter] = useState<number>(0)
-  const [o_counter, setO_counter] = useState<number>(0)
-  const [draw_counter, setDraw_counter] = useState<number>(0)
+  const [x_counter, setX_counter] = useState<number>(0);
+  const [o_counter, setO_counter] = useState<number>(0);
+  const [draw_counter, setDraw_counter] = useState<number>(0);
 
   function handleReset(): void {
     setState(start_field);
