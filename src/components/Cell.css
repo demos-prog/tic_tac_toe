@@ -1,0 +1,35 @@
+button {
+  padding: auto;
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  color: white;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  filter: invert();
+}
+
+.disabled {
+  cursor: default;
+}
+
+.victoryBlink {
+  animation: .3s victoryBlinking linear infinite;
+}
+
+@keyframes victoryBlinking {
+  from {
+    filter: invert();
+  }
+
+  50% {
+    filter: none;
+  }
+
+  to {
+    filter: invert();
+  }
+}

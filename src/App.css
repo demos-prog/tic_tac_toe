@@ -1,0 +1,54 @@
+* {
+  color: white;
+}
+
+#wrapper {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 20px;
+}
+
+#field,
+.row {
+  display: flex;
+  gap: 3px;
+}
+
+#field {
+  background-color: white;
+  flex-direction: column;
+}
+
+.blink {
+  animation: .2s blinking linear infinite;
+}
+
+@keyframes blinking {
+  from {
+    background-color: white;
+  }
+
+  50% {
+    background-color: black;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+#reset_btn {
+  width: 100px;
+  height: 50px;
+  border: 1px solid white;
+  transition: .2s linear;
+}
+
+#reset_btn:hover {
+  border-color: blueviolet;
+}
