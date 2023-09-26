@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import './null_styles.css';
 
 import Cell from './components/Cell';
@@ -101,11 +100,8 @@ function App() {
         {state.map((row, i) => {
           return <div className='row' key={i}>
             {row.map((item, j) => {
-              const id = uuidv4();
-
               return <Cell
                 coordsOfVictor={victory.coordsOfVictor}
-                id={id}
                 isTie={isTie}
                 isEnd={victory.isWinner}
                 isFirst={isFirst}

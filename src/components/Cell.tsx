@@ -14,11 +14,10 @@ type CellProps = {
   isFirst: boolean;
   isEnd: boolean;
   isTie: boolean;
-  id: string;
 };
 
 const Cell: React.FC<CellProps> = (
-  { setState, setIsFirst, currentState, coordsOfVictor, row, cell, isFirst, isEnd, isTie, id }) => {
+  { setState, setIsFirst, currentState, coordsOfVictor, row, cell, isFirst, isEnd, isTie }) => {
 
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -56,7 +55,7 @@ const Cell: React.FC<CellProps> = (
   }
 
   return (
-    <button ref={buttonRef} id={id} className={isEnd || isTie ? "disabled" : ""} onClick={handleClick}>
+    <button ref={buttonRef} className={isEnd || isTie ? "disabled" : ""} onClick={handleClick}>
       {currentState === "" && ""}
       {currentState === "X" && (<img src={cross} alt="cross" />)}
       {currentState === "O" && (<img src={circle} alt="circle" />)}
