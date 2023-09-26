@@ -1,5 +1,6 @@
 * {
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #wrapper {
@@ -53,6 +54,6 @@
   border-color: blueviolet;
 }
 
-#wr{
+#wr {
   height: 30px;
 }
