@@ -57,3 +57,8 @@
 #wr {
   height: 30px;
 }
+
+#players_info{
+  display: flex;
+  gap: 100px;
+}

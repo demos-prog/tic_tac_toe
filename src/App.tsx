@@ -16,6 +16,9 @@ type Winner = {
 function App() {
   const [state, setState] = useState<string[][]>(start_field);
   const [isFirst, setIsFirst] = useState<boolean>(true);
+  const [x_counter, setX_counter] = useState<number>(0)
+  const [o_counter, setO_counter] = useState<number>(0)
+  const [draw_counter, setDraw_counter] = useState<number>(0)
 
   function handleReset() {
     setState(start_field);
@@ -120,6 +123,11 @@ function App() {
       <div id='wr'>
         {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
         {isTie && !victory.isWinner && <div>It's tie !</div>}
+        <div id='players_info'>
+          <div>X-player: {x_counter}</div>
+          <div>Draws: {draw_counter}</div>
+          <div>O-player: {o_counter}</div>
+        </div>
       </div>
       <button id='reset_btn' onClick={handleReset}>RESET</button>
     </div>
