@@ -32,7 +32,6 @@ const Cell: React.FC<CellProps> = (
   }, [coordsOfVictor, row, cell]);
 
   function handleClick() {
-
     if (isEnd) return;
     if (currentState != "") return;
     setState((state: string[][]) => {

@@ -52,3 +52,7 @@
 #reset_btn:hover {
   border-color: blueviolet;
 }
+
+#wr{
+  height: 30px;
+}

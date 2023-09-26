@@ -116,10 +116,12 @@ function App() {
           </div>
         })}
       </div>
-      {isTie || victory.isWinner ? <div>Game over !</div> : <span>Current player: {isFirst ? "X" : "O"}</span>}
+      {isTie || victory.isWinner ? <div>Game over !</div> : <div>Current player: {isFirst ? "X" : "O"}</div>}
+      <div id='wr'>
+        {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
+        {isTie && !victory.isWinner && <div>It's tie !</div>}
+      </div>
       <button id='reset_btn' onClick={handleReset}>RESET</button>
-      {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
-      {isTie && !victory.isWinner && <div>It's tie !</div>}
     </div>
   )
 }
