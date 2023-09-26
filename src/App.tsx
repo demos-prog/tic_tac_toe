@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './null_styles.css';
 
 import Cell from './components/Cell';
@@ -97,6 +97,17 @@ function App() {
   const victory = handleVictory();
   const isTie = handleTie();
 
+  useEffect(() => {
+    if (victory.isWinner) {
+      if (victory.whoWon === "X") {
+        setX_counter(prev => prev + 1);
+      } else {
+        setO_counter(prev => prev + 1);
+      }
+    }
+    if (isTie) setDraw_counter(prev => prev + 1);
+  }, [isFirst])
+
   return (
     <div id='wrapper'>
       <div id='field'>
@@ -123,11 +134,11 @@ function App() {
       <div id='wr'>
         {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
         {isTie && !victory.isWinner && <div>It's tie !</div>}
-        <div id='players_info'>
-          <div>X-player: {x_counter}</div>
-          <div>Draws: {draw_counter}</div>
-          <div>O-player: {o_counter}</div>
-        </div>
+      </div>
+      <div id='players_info'>
+        <div>X-player: {x_counter}</div>
+        <div>Draws: {draw_counter}</div>
+        <div>O-player: {o_counter}</div>
       </div>
       <button id='reset_btn' onClick={handleReset}>RESET</button>
     </div>
