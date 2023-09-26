@@ -58,7 +58,19 @@
   height: 30px;
 }
 
-#players_info{
+#players_info {
   display: flex;
   gap: 100px;
+}
+
+.sector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sector span:nth-child(2) {
+  font-size: 25px;
+  font-weight: bold;
 }

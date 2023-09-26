@@ -130,15 +130,24 @@ function App() {
           </div>
         })}
       </div>
-      {isTie || victory.isWinner ? <div>Game over !</div> : <div>Current player: {isFirst ? "X" : "O"}</div>}
+      {isTie || victory.isWinner ? <div>Game over !</div> : <div>Current player: <b>{isFirst ? "X" : "O"}</b></div>}
       <div id='wr'>
         {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
         {isTie && !victory.isWinner && <div>It's tie !</div>}
       </div>
       <div id='players_info'>
-        <div>X-player: {x_counter}</div>
-        <div>Draws: {draw_counter}</div>
-        <div>O-player: {o_counter}</div>
+        <div className='sector'>
+          <span>X-player:</span>
+          <span>{x_counter}</span>
+        </div>
+        <div className='sector'>
+          <span>Draws:</span>
+          <span>{draw_counter}</span>
+        </div>
+        <div className='sector'>
+          <span>O-player:</span>
+          <span>{o_counter}</span>
+        </div>
       </div>
       <button id='reset_btn' onClick={handleReset}>RESET</button>
     </div>
