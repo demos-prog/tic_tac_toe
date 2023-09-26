@@ -20,7 +20,7 @@ function App() {
   const [o_counter, setO_counter] = useState<number>(0)
   const [draw_counter, setDraw_counter] = useState<number>(0)
 
-  function handleReset() {
+  function handleReset(): void {
     setState(start_field);
     setIsFirst(true);
   }
