@@ -74,3 +74,9 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+@media (max-width: 500px) {
+  #players_info{
+    gap: 10vw;
+  }
+}

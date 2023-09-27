@@ -48,3 +48,15 @@ img {
     filter: invert();
   }
 }
+
+@media (max-width: 500px) {
+  button{
+    width: 30vw;
+    height: 30vw;
+  }
+
+  img{
+    width: 70%;
+    height: 70%;
+  }
+}
