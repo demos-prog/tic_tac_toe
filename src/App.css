@@ -25,6 +25,17 @@
   flex-direction: column;
 }
 
+.gg{
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#next{
+  font-size: 30px;
+}
+
 .blink {
   animation: .2s blinking linear infinite;
 }

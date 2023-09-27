@@ -20,9 +20,11 @@ function App() {
   const [o_counter, setO_counter] = useState<number>(0);
   const [draw_counter, setDraw_counter] = useState<number>(0);
 
+  const gamesPlayed = x_counter + o_counter + draw_counter + 1;
+
   function handleReset(): void {
     setState(start_field);
-    setIsFirst(true);
+    setIsFirst(gamesPlayed % 2 !== 0);
   }
 
   function handleVictory(): Winner {
@@ -130,11 +132,12 @@ function App() {
           </div>
         })}
       </div>
-      {isTie || victory.isWinner ? <div>Game over !</div> : <div>Next move: <b>{isFirst ? "X" : "O"}</b></div>}
+      {isTie || victory.isWinner ? <div className='gg'>Game over !</div> : <div className='gg'>Next move: <span id="next">{isFirst ? "X" : "O"}</span></div>}
       <div id='wr'>
         {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
         {isTie && !victory.isWinner && <div>It's tie !</div>}
       </div>
+      <div>Games played: {gamesPlayed - 1}</div>
       <div id='players_info'>
         <div className='sector'>
           <span>X-player:</span>
