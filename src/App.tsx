@@ -130,7 +130,7 @@ function App() {
           </div>
         })}
       </div>
-      {isTie || victory.isWinner ? <div>Game over !</div> : <div>Current player: <b>{isFirst ? "X" : "O"}</b></div>}
+      {isTie || victory.isWinner ? <div>Game over !</div> : <div>Next move: <b>{isFirst ? "X" : "O"}</b></div>}
       <div id='wr'>
         {victory.isWinner && <div>Winner is: {victory.whoWon}</div>}
         {isTie && !victory.isWinner && <div>It's tie !</div>}
