@@ -19,14 +19,14 @@ type CellProps = {
 const Cell: React.FC<CellProps> = (
   { setState, setIsFirst, currentState, coordsOfVictor, row, cell, isFirst, isEnd, isTie }) => {
 
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const is_in_victor: boolean = coordsOfVictor?.some(coord => coord[0] === row && coord[1] === cell);
     if (is_in_victor) {
-      buttonRef.current?.classList.add('victoryBlink');
+      imageRef.current?.classList.add('victoryBlink');
       setTimeout(() => {
-        buttonRef.current?.classList.remove('victoryBlink');
+        imageRef.current?.classList.remove('victoryBlink');
       }, 600)
     }
   }, [coordsOfVictor, row, cell]);
@@ -54,10 +54,10 @@ const Cell: React.FC<CellProps> = (
   }
 
   return (
-    <button ref={buttonRef} className={isEnd || isTie ? "disabled" : ""} onClick={handleClick}>
+    <button className={isEnd || isTie ? "disabled" : ""} onClick={handleClick}>
       {currentState === "" && ""}
-      {currentState === "X" && (<img src={cross} alt="cross" />)}
-      {currentState === "O" && (<img src={circle} alt="circle" />)}
+      {currentState === "X" && (<img ref={imageRef} src={cross} alt="cross" />)}
+      {currentState === "O" && (<img ref={imageRef} src={circle} alt="circle" />)}
     </button>
   );
 
