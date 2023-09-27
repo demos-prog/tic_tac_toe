@@ -1,6 +1,7 @@
 * {
   color: white;
   font-family: 'Montserrat', sans-serif;
+  user-select: none;
 }
 
 #wrapper {
@@ -26,14 +27,14 @@
   flex-direction: column;
 }
 
-.gg{
+.gg {
   height: 30px;
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-#next{
+#next {
   font-size: 30px;
 }
 
@@ -89,16 +90,19 @@
 }
 
 @media (max-width: 500px) {
-  #players_info{
+  #players_info {
     gap: 10vw;
   }
-  #wrapper{
+
+  #wrapper {
     gap: 5px;
   }
-  #field{
+
+  #field {
     margin-top: 10px;
   }
-  .sector{
+
+  .sector {
     gap: 10px;
   }
 }
