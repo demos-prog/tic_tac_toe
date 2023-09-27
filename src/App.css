@@ -21,6 +21,7 @@
 }
 
 #field {
+  margin-top: 20px;
   background-color: white;
   flex-direction: column;
 }
@@ -59,6 +60,7 @@
   height: 50px;
   border: 1px solid white;
   transition: .2s linear;
+  margin-bottom: 20px;
 }
 
 #reset_btn:hover {
@@ -89,5 +91,14 @@
 @media (max-width: 500px) {
   #players_info{
     gap: 10vw;
+  }
+  #wrapper{
+    gap: 5px;
+  }
+  #field{
+    margin-top: 10px;
+  }
+  .sector{
+    gap: 10px;
   }
 }
