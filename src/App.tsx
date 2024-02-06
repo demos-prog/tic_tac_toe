@@ -107,7 +107,7 @@ function App() {
         setO_counter(prev => prev + 1);
       }
     }
-    if (isTie) setDraw_counter(prev => prev + 1);
+    if (isTie && !victory.isWinner) setDraw_counter(prev => prev + 1);
   }, [isFirst])
 
   return (
